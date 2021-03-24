@@ -116,7 +116,7 @@ async function main(zipcode) {
     data = response.data;
 
     if (data.errors && data.errors.length) {
-      if (data.errors[0].FC_904_NoData) {
+      if (/NoData/.test(data.errors[0].code)) {
         console.log(
           `No timeslots for appointments for ${zipcode}...${new Date().toLocaleString()}`
         );
