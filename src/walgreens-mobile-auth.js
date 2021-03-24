@@ -92,7 +92,7 @@ async function main(zipcode) {
       return;
     }
 
-    // Walgreens has a second-level availability/timeslots check. TODO: fetch this.
+    // Walgreens has a second-level availability/timeslots check. 
     response = await http.fetch(
       "https://services.walgreens.com/sag/MobileAppSchedulerService/2.0/immunizationLocations/timeslots",
       "POST",
@@ -124,6 +124,7 @@ async function main(zipcode) {
         console.log(
           `Unknown error for appointments for ${zipcode}...${new Date().toLocaleString()}`
         );
+        console.log(JSON.stringify(data, null, 2));
       }
       return;
     }
