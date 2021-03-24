@@ -1,0 +1,13 @@
+while true; do 
+  node src/walgreens-mobile-auth 60616
+  if [[ "$?" -ne 0 ]]; then 
+    exit 1
+  fi
+  sleep 35
+
+  node src/walgreens-mobile-auth 60606
+  if [[ "$?" -ne 0 ]]; then 
+    exit 1
+  fi
+  sleep 35
+done
